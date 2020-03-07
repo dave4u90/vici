@@ -1,0 +1,4 @@
+XMAX = 5.freeze
+YMAX = 5.freeze
+DIRECTIONS = %w[NORTH EAST SOUTH WEST].freeze 
+COMMANDS = %w[PLACE MOVE LEFT RIGHT REPORT].freeze
