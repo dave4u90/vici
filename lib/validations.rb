@@ -1,6 +1,7 @@
 module Validations
   def validx?(xposition: nil)
     return false if (xposition.present? && xposition.is_a?(String) && !xposition.is_integer?)
+    return false if xposition.blank? && !placed?
 
     xposition = xposition.to_i if xposition.present?
     xposition ||= currentx
@@ -9,7 +10,8 @@ module Validations
 
   def validy?(yposition: nil)
     return false if (yposition.present? && yposition.is_a?(String) && !yposition.is_integer?)
-
+    return false if yposition.blank? && !placed?
+    
     yposition = yposition.to_i if yposition.present?
     yposition ||= currenty
     yposition >= 0 && yposition <= YMAX

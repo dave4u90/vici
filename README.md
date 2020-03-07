@@ -15,7 +15,7 @@ A simulation of a robot on a 5*5 table
 - MOVE will move the toy robot one unit forward in the direction it is currently facing.
 - LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.
 - REPORT will announce the X,Y and orientation of the robot.
-- A robot that is not on the table can choose to ignore the MOVE, LEFT, RIGHT and REPORT commands.
+- A robot that is not on the table will ignore the MOVE, LEFT, RIGHT and REPORT commands.
 
 ## Constraints
 
