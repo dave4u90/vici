@@ -26,8 +26,10 @@ class ViciShell
           when 'MOVE'
             @vici.move
           when 'REPORT'
-            p @vici.report
-          else
+            report = @vici.report 
+            p report if report
+          when 'EXIT'
+            exit
           end
         end
       rescue Interrupt
@@ -37,5 +39,4 @@ class ViciShell
   end
 end
 
-ViciShell.new.run
 
