@@ -1,6 +1,5 @@
 require_relative 'required'
 require_relative 'vici'
-require 'pry'
 
 class ViciShell
   def initialize
@@ -12,13 +11,13 @@ class ViciShell
       begin
         while line = Readline.readline('VICI> ', true)
           command, parameters = line.split(' ')
-          return unless COMMANDS.include? command
+          next unless COMMANDS.include? command
           
           case command
           when 'PLACE'
-            return unless parameters.present?
+            next unless parameters.present?
             xposition, yposition, direction = parameters.split(',')
-            return unless [xposition, yposition, direction].all?(&:present?)
+            next unless [xposition, yposition, direction].all?(&:present?)
             @vici.place(xposition: xposition, yposition: yposition, direction: direction)
           when 'LEFT'
             @vici.left
@@ -27,7 +26,8 @@ class ViciShell
           when 'MOVE'
             @vici.move
           when 'REPORT'
-            @vici.report
+            p @vici.report
+          else
           end
         end
       rescue Interrupt

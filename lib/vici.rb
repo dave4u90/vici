@@ -55,7 +55,7 @@ class Vici
   end
 
   def report
-    p [currentx, currenty, current_direction].join(',')
+    [currentx, currenty, current_direction].join(',') if placed?
   end
 
   private
